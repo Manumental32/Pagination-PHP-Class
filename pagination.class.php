@@ -54,7 +54,7 @@ class pagination {
 	 * @param mixed $itemcount
 	 * @param int $currentpage (default: 1)
 	 * @param array $options (default: array())
-	 * @return void
+	 * @return int
 	 */
 	public function __construct($itemcount,$currentpage=1,$options=array()) {
 		if(!$itemcount 		|| 	!is_numeric($itemcount))		{	return false;	}
@@ -77,7 +77,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $id
-	 * @return void
+	 * @return int
 	 */
 	public function set_page($id) {
 		if(!$id || !is_numeric($id) || $id <= 0) {	return false; }
@@ -89,7 +89,7 @@ class pagination {
 	 * get_page function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_page() {
 		return (int)$this->currentpage;
@@ -100,7 +100,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $amount
-	 * @return void
+	 * @return int
 	 */
 	public function set_itemcount($amount) {
 		if(!$amount || !is_numeric($amount) || $amount <= 0) {	return false;	}
@@ -112,7 +112,7 @@ class pagination {
 	 * get_itemcount function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_itemcount() {
 		return (int)$this->itemcount;
@@ -123,7 +123,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $amount
-	 * @return void
+	 * @return int
 	 */
 	public function set_items_per_page($amount) {
 		if(!$amount || !is_numeric($amount) || $amount <= 0) {	return false;	}
@@ -135,7 +135,7 @@ class pagination {
 	 * get_items_per_page function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_items_per_page() {
 		return (int)$this->items_per_page;
@@ -146,7 +146,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $bool
-	 * @return void
+	 * @return int
 	 */
 	public function set_jumpers($bool) {
 		$this->jumpers	=	(bool)($bool) ? true:false;
@@ -157,7 +157,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $tag
-	 * @return void
+	 * @return int
 	 */
 	public function set_wrapper_tag($tag) {
 		if(!$tag || !is_string($tag) || empty($tag) || trim($tag) === '') {	return false;	}
@@ -169,7 +169,7 @@ class pagination {
 	 * get_wrapper_tag function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_wrapper_tag() {
 		return (string)$this->tag_wrapper;
@@ -180,7 +180,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $tag
-	 * @return void
+	 * @return int
 	 */
 	public function set_item_tag($tag) {
 		if(!$tag || !is_string($tag) || empty($tag) || trim($tag) === '') {	return false;	}
@@ -192,7 +192,7 @@ class pagination {
 	 * get_item_tag function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_item_tag() {
 		return (string)$this->tag_item;
@@ -203,7 +203,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param mixed $class
-	 * @return void
+	 * @return int
 	 */
 	public function set_active_class($class)	{
 		if(!$class || !is_string($class) || empty($class) || trim($class) == '') {	return false;	}
@@ -215,7 +215,7 @@ class pagination {
 	 * get_active_class function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_active_class() {
 		return (string)$this->activelcass;
@@ -226,7 +226,7 @@ class pagination {
 	 * 
 	 * @access public
 	 * @param array $attributes (default: array())
-	 * @return void
+	 * @return int
 	 */
 	public function set_attributes($attributes=array()) {
 		if(!is_array($attributes)) {	return false;	}
@@ -238,7 +238,7 @@ class pagination {
 	 * get_attributes function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function get_attributes() {
 		return $this->attributes;
@@ -248,7 +248,7 @@ class pagination {
 	 * render function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function render() {
 		$this->calculate();
@@ -340,7 +340,7 @@ class pagination {
 	 * fetch function.
 	 * 
 	 * @access public
-	 * @return void
+	 * @return int
 	 */
 	public function fetch() {
 		ob_start();
@@ -354,7 +354,7 @@ class pagination {
 	 * calculate function.
 	 * 
 	 * @access private
-	 * @return void
+	 * @return int
 	 */
 	private function calculate() {
 		$pages	=	(int)($this->itemcount/$this->items_per_page);
@@ -372,7 +372,7 @@ class pagination {
 	 * @param mixed $txt
 	 * @param mixed $var
 	 * @param string $tag (default: '##ID##')
-	 * @return void
+	 * @return int
 	 */
 	private function render_text($txt,$var,$tag='##ID##') {
 		if(!$txt || !is_string($txt) || empty($txt) || trim($txt) === '') {	return 'ERROR';	}
