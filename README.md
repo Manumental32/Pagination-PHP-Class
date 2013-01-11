@@ -32,7 +32,7 @@ $data	=	$pagination->render();
 ?>
 ```
 
-would result in something linke this
+would result in something like this
 
 ```html
 <ul id="pagination2" class="pagination">
