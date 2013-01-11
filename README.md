@@ -1,7 +1,9 @@
 Pagination-PHP-Class
 ====================
 
-A basic class for creating easy pagination lists
+A basic class for creating easy pagination lists. Feel free to contribute. :)
+
+Freely distributable under the MIT License.
 
 ##Basic Usage
 =============
